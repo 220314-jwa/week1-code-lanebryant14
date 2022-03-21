@@ -1,12 +1,15 @@
-public class Main {
-	public static void main(String[] args) {
-		Javalin app = Javalin.create();
+public class Main {						//class creation
+	public static void main(String[] args) {		//main method
+		Javalin app = Javalin.create();			// Get javalin object
 
-		app.start();
+		app.start();					//start up the server
 
-		app.get("foods", ctx -> {
-			Food myFood = new Food("carrots", "vegetable");
-			ctx.result("You got: " + myFood.name);
+		app.get("foods", ctx -> {			// HTTP request response
+			Food myFood = new Food("carrots", "vegetable");	
+			ctx.result("You got: " + myFood.name);	// ctx result send out the message you got + myFood
 		});
 	}
 }
+
+
+A text based response of you got carrots and you got vegetable printed out.

@@ -1,25 +1,28 @@
-<html>
-	<head>
-		<title>Daily Code Review</title>
-	</head>
-	<body>
-		<h1>Cook your food!</h1>
-		<form action="http://localhost:8080/cook">
-			<label for="foodName">Food Name:</label>
-			<input id="foodName" name="foodName" type="text">
-			<br>
-			<button type="submit">Submit</button>
-		</form>
-	</body>
-</html>
+<html> 									//root tag
+	<head> 								//metadata tag
+		<title>Daily Code Review</title> 			// page title
+	</head> 							//metadata tag end
+	<body> 								// page structure tag
+		<h1>Cook your food!</h1>				// header tag
+		<form action="http://localhost:8080/cook">		// Form settting the URI of the request
+			<label for="foodName">Food Name:</label>	// Label Food Name for the input
+			<input id="foodName" name="foodName" type="text">// input element with the attribute text
+			<br>						// line break
+			<button type="submit">Submit</button>		// submit button
+		</form>							// end group tag
+	</body>								// page structure tag
+</html>									// end root tag
 
-public static void main(String[] args) {
-	Javalin app = Javalin.create();
-	app.start();
+public static void main(String[] args) {				// Main method
+	Javalin app = Javalin.create();					// Get Javalin object
+	app.start();							// start up the server, listening for HTTP request
 
-	app.get("cook", ctx -> {
-		String foodSent = ctx.formParam("foodName");
-		String cookedFood = "cooked " + foodSent;
-		ctx.result("Here's your food! <br>" + cookedFood);
+	app.get("cook", ctx -> {					// HTTP request response
+		String foodSent = ctx.formParam("foodName");		// linking foodsent to the html form
+		String cookedFood = "cooked " + foodSent;		// class cookedFood adds strings cooked and value of foodsent
+		ctx.result("Here's your food! <br>" + cookedFood);      // ctx result send out
 	});
 }
+
+
+The code above requires a user to input  a Food Name and submit. Once submitted the request will send out the messaage "Cooked" and Food Name.
