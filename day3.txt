@@ -1,24 +1,28 @@
-public class Food {
-	public String name;
-	public String type;
+public class Food {						// creates class Food
+	public String name;					// Creates object name
+	public String type;					// creates object type
 
-	public Food(String name, String type) {
+	public Food(String name, String type) {			// variable argument
 		this.name = name;
 		this.type = type;
 	}
 
-	public void cook() {
-		if (!name.contains("cooked")) {
-			name = "cooked " + name;
+	public void cook() {					// class creation
+		if (!name.contains("cooked")) {			// conditional statment evaluates if name contains the string "cooked"
+			name = "cooked " + name;		// "cooked is added the the string name
 		}
 	}
 }
 
 public class Main {
-	public static void main(String[] args) {
-		Food myFood = new Food("potato", "vegetable");
-		myFood.cook();
+	public static void main(String[] args) {		// main method
+		Food myFood = new Food("potato", "vegetable");	// My food equals "potato", "vegetable" 
+		myFood.cook();					// variable scope incorporates class cook
 
-		System.out.println(myFood.name);
+		System.out.println(myFood.name);		// terminal printout
 	}
 }
+
+
+Terminal prints out "potato", "vegetable". The strings are checked for the keywords cooked. 
+If name contains cooked it will be added to the value of name.

@@ -1,13 +1,16 @@
-int score = 80;
+int score = 80; 					//primitive variable declaration by stating variable type,name and assigning a value
 
-String result;
+String result; 						//class creation named result
 
-if (score == 80) {
-	result = "You passed!";
-} else if (score > 80) {
-	result = "You did great!";
-} else {
-	result = "You did not pass. Try again!";
+if (score == 80) { 					//conditional statement evaluating if the value of score is equivlant to 80. 
+	result = "You passed!";  			// String result value is " You passed!"
+} else if (score > 80) { 				//conditional statement evaluating if the value of score is greater than 80.
+	result = "You did great!";			//String result value is " You did great!"
+} else { 						//conditional statement evaluating if the above statements are false.
+	result = "You did not pass. Try again!";	//String result value is " You did not pass. Try again!"
 }
 
-System.out.println(result);
+System.out.println(result);				//The value of result prints out to the terminal
+
+
+The code above prints onto the terminal one of three conditions, based on the value of score.

@@ -1,28 +1,27 @@
-public static void main(String[] args) {
-	String[] foodTypes = getFoodTypes();
-	String myType = foodTypes[2];
-
-	String[] foodsOfMyType = getFoodsByType(myType);
+public static void main(String[] args) {						// Main Method signature
+	String[] foodTypes = getFoodTypes();						// Array FoodTypes value equals array getFoodTypes
+	String myType = foodTypes[2];							// Creates class myType with a value of a 2 element array
+	String[] foodsOfMyType = getFoodsByType(myType);				// Creates a string array
 	
 	for (String food : foodsOfMyType) {
-		System.out.println(food);
+		System.out.println(food);						// Prints value of food to the terminal
 	}
 }
 
-public static String[] getFoodTypes() {
-	String[] foodTypes = {"breakfast","lunch","dinner","dessert","snack"};
-	return foodTypes;
+public static String[] getFoodTypes() {							// Method creation
+	String[] foodTypes = {"breakfast","lunch","dinner","dessert","snack"};		// Creates a string array with 5 elements
+	return foodTypes;								// Method return.
 }
 
-public static String[] getFoodsByType(String type) {
-	String[] foods = new String[3];
+public static String[] getFoodsByType(String type) {					// Method creation and string creation named type
+	String[] foods = new String[3];							// Creates array with 3 elements
 
-	switch(type) {
-	case "breakfast":
-		foods[0] = "pancakes";
-		foods[1] = "cereal";
-		foods[2] = "omelette";
-		break;
+	switch(type) {									// switch statment checking the "type" variable
+	case "breakfast":								// creates 1 case
+		foods[0] = "pancakes";							// Element 1 of foods array equal to "pancakes"
+		foods[1] = "cereal";							// Element 2 of foods array equal to "cereal"
+		foods[2] = "omelette";							// Element 3 of foods array equal to "omelette"
+		break;									// seperates cases
 	case "lunch":
 		foods[0] = "sandwich";
 		foods[1] = "salad";
@@ -43,10 +42,12 @@ public static String[] getFoodsByType(String type) {
 		foods[1] = "apple";
 		foods[2] = "samosa";
 		break;
-	default:
+	default:									// catch-all, if the abouve cases are not true
 		// add your own
 		break;
 	}
 
-	return foods;
+	return foods;									// Method return.
 }
+
+The code prints out to the terminal the food types "breakfast","lunch","dinner","dessert","snack" The three foods for each are also listed under each food type.
